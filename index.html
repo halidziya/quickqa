@@ -1,0 +1,20 @@
+<script>
+function ask(){
+    fetch('ask?q='+document.getElementById("q").value)
+  .then((response) => response.text())
+  .then((data) => 
+    document.getElementById("answers").innerText = data
+  );
+}
+</script>
+
+<center style="position:fixed;top:50%;left:40%;">
+  
+Question : <input id="q"></input> <button onclick="ask()">Ask</button>
+<br>
+<span id="answers">
+
+</span>
+
+  
+</center>
