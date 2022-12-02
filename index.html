@@ -1,3 +1,7 @@
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
 <script>
 function ask(){
     fetch('ask?q='+document.getElementById("q").value)
@@ -10,10 +14,12 @@ function ask(){
 
 <center style="position:fixed;top:50%;left:40%;">
   
-Question : <input id="q"></input> <button onclick="ask()">Ask</button>
-<br>
+<div style="margin: 0px;">
+<input id="q" placeholder="Question" style="height:40px"></input> 
+<ion-button onclick="ask()" 
+style="height:40px;">Ask</ion-button>
+</div>
 <span id="answers">
-
 </span>
 
   
