@@ -23,9 +23,9 @@ warrant examination on the merits, without the public deriving any real benefit.
 thousands of applicants inevitably have their claims rejected.
 2. The States Parties to the Convention, and also the Court and its Registry, have constantly sought
 ways to tackle this problem and ensure effective administration of justice. One of the most visible
-measures has been the adoption of Protocol No. 14 to the Convention. This provides, among other
+measures has been the adoption of Protocol No 14 to the Convention. This provides, among other
 things, for applications which are clearly inadmissible to be dealt with by a single judge assisted by
-non-judicial rapporteurs, rather than by a three-judge committee. Protocol No. 14, which came into
+non-judicial rapporteurs, rather than by a three-judge committee. Protocol No 14, which came into
 force on 1 June 2010, also introduced a new admissibility criterion relating to the degree of
 disadvantage suffered by the applicant, aimed at discouraging applications from persons who have
 not suffered significant disadvantage.
@@ -42,5 +42,3 @@ Conference led to the adoption of Protocol No. 15 to the Convention, which apart
 reference to the the principle of subsidiarity and the doctrine of the margin of appreciation into the
 Convention’s Preamble, reduces from six to four months the time within which an application must
 be lodged with the Court after a final national decision.
-3. The idea of providing potential applicants with comprehensive and objective information on the
-application procedure and admissibility criteria is expressly articulated in point C-6(a) and (b) of the 
