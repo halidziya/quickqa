@@ -2,14 +2,15 @@ from transformers import pipeline
 from flask import Flask, request
 from nltk.tokenize import sent_tokenize
 import numpy as np
+import pandas as pd
 
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('all-mpnet-base-v2')
-with open('content.txt') as fil:
-    context = fil.read()
 
-sentences = sent_tokenize(context)
-embeddings = model.encode(sentences)
+data = pd.read_csv('traveldocument.csv')
+
+
+embeddings = model.encode(data["Question"])
 
 
 def old_version():
@@ -38,6 +39,6 @@ def ask():
     question=request.args.get("q")
     encodedq = model.encode([question])
     distances = np.linalg.norm(embeddings - encodedq, axis=1)
-    closest = np.argsort(distances)[:2]
-    return sentences[closest[0]] + '\n' + sentences[closest[1]]
+    closest = np.argsort(distances)[0]
+    return data["Answer"][closest]
 
