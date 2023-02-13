@@ -1,6 +1,6 @@
 from transformers import pipeline
 from flask import Flask, request, send_file
-from nltk.tokenize import sent_tokenize
+#from nltk.tokenize import sent_tokenize
 import numpy as np
 import pandas as pd
 
@@ -8,7 +8,7 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('all-mpnet-base-v2')
 
 data = pd.read_csv('traveldocument.csv')
-questions = [sent_tokenize(q) for q in data['Question']]
+questions = [q.split('?') for q in data['Question']]
 answerids = [id for id, qlist in enumerate(questions) for item in qlist]
 questions = [item for qlist in questions for item in qlist]
 answers = data['Answer'].tolist()
