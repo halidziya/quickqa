@@ -1,1 +1,1 @@
-flask --app qa run
+python3 flask --app qa run
