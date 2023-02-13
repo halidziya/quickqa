@@ -13,22 +13,26 @@ function ask(){
 </script>
 
 <body style="background-color: rgb(218, 157, 5);">
-<center style="position:fixed;top:20%;left:20%;width: 60%;">
-  
-<ion-card >
-  <img src="TravelDOCA.png" style="width: 150px;"></img>
-  <ion-card-header>
-    <input id="q" placeholder="Question" style="height:40px;width: 90%;"></input> 
-  </ion-card-header>
+<center style="position:fixed;top:20%;left:20%;width: 60%;
+display:flex;">
 
-  <ion-button onclick="ask()" 
-  style="height:40px;">Ask</ion-button>
-  <br>
-  <br>
-  <div id="answers" style="padding: 10px;">
+
+  <div id="right-pane" style="width: 100%;">
+  <ion-card >
+    <img src="image/traveldoca.png" style="width: 150px;"></img>
+    <ion-card-header>
+      <input id="q" placeholder="Question" style="height:40px;width: 90%;"></input> 
+    </ion-card-header>
+
+    <ion-button onclick="ask()" 
+    style="height:40px;">Ask</ion-button>
+    <br>
+    <br>
+    <div id="answers" style="padding: 10px;">
+    </div>
+
+  </ion-card>
   </div>
 
-</ion-card>
-  
 </center>
 </body>

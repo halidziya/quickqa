@@ -1,5 +1,5 @@
 from transformers import pipeline
-from flask import Flask, request
+from flask import Flask, request, send_file
 from nltk.tokenize import sent_tokenize
 import numpy as np
 import pandas as pd
@@ -8,9 +8,14 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('all-mpnet-base-v2')
 
 data = pd.read_csv('traveldocument.csv')
+questions = [sent_tokenize(q) for q in data['Question']]
+answerids = [id for id, qlist in enumerate(questions) for item in qlist]
+questions = [item for qlist in questions for item in qlist]
+answers = data['Answer'].tolist()
+alltext = questions + answers
 
-
-embeddings = model.encode(data["Question"])
+embeddings = model.encode(alltext)
+types = [0]*len(questions) + [1]*len(answers)
 
 
 def old_version():
@@ -33,6 +38,10 @@ def main():
         page = fil.read()
     return page
 
+@app.route('/image/traveldoca.png')
+def serve_image():
+    return send_file('image/traveldoca.png', mimetype='image/png')
+
 
 @app.route("/ask", methods=['GET'])
 def ask():
@@ -40,5 +49,8 @@ def ask():
     encodedq = model.encode([question])
     distances = np.linalg.norm(embeddings - encodedq, axis=1)
     closest = np.argsort(distances)[0]
-    return data["Answer"][closest]
+    if (types[closest]==0): # Question
+        return answers[answerids[closest]]
+    else:
+        return alltext[closest]
 
