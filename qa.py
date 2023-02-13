@@ -14,7 +14,7 @@ questions = [item for qlist in questions for item in qlist]
 answers = data['Answer'].tolist()
 alltext = questions + answers
 
-embeddings = model.encode(alltext)
+embeddings = model.encode(alltext, show_progress_bar=True)
 types = [0]*len(questions) + [1]*len(answers)
 
 
